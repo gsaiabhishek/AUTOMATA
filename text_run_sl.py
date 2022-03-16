@@ -24,15 +24,15 @@ if __name__ == '__main__':
     parser.add_argument('--kappa', type=float, default=0, help='kappa value for warm start. include kappa in Full config too')
     parser.add_argument('--change', type=int, default=1, help='change params mentioned for train class?')
 
-    parser.add_argument('--config_file', type=str, default='/home/ayush/Documents/abhishek/cords/configs/SL/config_craigpb_glove_trec6.py')
-    parser.add_argument('--config_hp', type=str, default='/home/ayush/Documents/abhishek/cords/configs/SL/config_hp_tpe_hb.py')
+    parser.add_argument('--config_file', type=str, default='configs/SL/config_craigpb_glove_trec6.py')
+    parser.add_argument('--config_hp', type=str, default='configs/SL/config_hp_tpe_hb.py')
     parser.add_argument('--is_hp', type=int, default=1, help='do we perform hyper parameter tuning?')
     parser.add_argument('--final_train', type=int, default=1, help='need final training hyper parameter tuning?')
 
     parser.add_argument('--ss_gen', type=int, default=0, help='gen facloc ss')
 
     args = parser.parse_args()
-    weight_path = '/home/ayush/Documents/abhishek/data/glove.6B/'
+    weight_path = 'data/glove.6B/'
 
     if bool(args.is_hp):
         config_hp_data = load_config_data(args.config_hp)
@@ -47,7 +47,6 @@ if __name__ == '__main__':
             # train_config_data.model.hidden_size = args.hidden_size
             # train_config_data.model.num_layers = args.num_layers
             train_config_data.dss_args.kappa = args.kappa
-            print('CHECK if kappa is set properly(default is 0.5, set in my_run_sl.py)')
 
             # train_config_data.train_args.num_epochs = args.epochs
             # train_config_data.train_args.print_every = args.print_every
