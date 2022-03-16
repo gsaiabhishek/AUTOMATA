@@ -10,8 +10,8 @@ if __name__ == '__main__':
     parser.add_argument('--ft_type', type=str, default='full', help='final_train type after hp tuning. full/gmpb')
     parser.add_argument('--change', type=int, default=1, help='change params mentioned for train class?')
     
-    parser.add_argument('--config_file', type=str, default='/home/kk/cords/configs/SL/config_gradmatchpb-warm_cifar100.py')
-    parser.add_argument('--config_hp', type=str, default='/home/kk/cords/configs/SL/config_hyper_param_tuning_cifar100.py')
+    parser.add_argument('--config_file', type=str, default='configs/SL/config_gradmatchpb-warm_cifar100.py')
+    parser.add_argument('--config_hp', type=str, default='configs/SL/config_hyper_param_tuning_cifar100.py')
     parser.add_argument('--scheduler', type=str, default='asha')
     parser.add_argument('--search_algo', type=str, default='TPE')
     parser.add_argument('--num_evals', type=int, default=27)
